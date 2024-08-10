@@ -1,11 +1,16 @@
 const express = require("express");
-const cors = require("cors");
 const dotenv = require("dotenv");
 const app = express();
 const userRoutes = require("./routes/user.route");
 const path = require("path");
 const productRoutes = require("./routes/product.route");
 require("./db/db");
+const cors = require("cors");
+app.use(cors({
+  origin: 'https://ecoz-test.netlify.app/', 
+  methods: 'GET,POST,PUT,DELETE', 
+  allowedHeaders: 'Content-Type,Authorization', 
+}));
 dotenv.config();
 const port = process.env.APP_PORT || 3006;
 
