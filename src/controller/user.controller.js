@@ -16,7 +16,8 @@ exports.login = async (req, res) => {
     if (!user || !correct) {
       return res.send(resError(ErrorConstants.ACCOUNT_NOT_FOUND, 404));
     }
-    const token = jwt.sign({ id: user._id }, process.env.SCREATE_KEY, {
+    const screate_key= process.env.SCREATE_KEY || 'base64UrlEncode(header) + "." +'
+    const token = jwt.sign({ id: user._id }, screate_key, {
       expiresIn: "6d",
     });
 
