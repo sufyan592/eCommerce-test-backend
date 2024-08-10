@@ -7,7 +7,7 @@ const path = require("path");
 const productRoutes = require("./routes/product.route");
 require("./db/db");
 dotenv.config();
-const port = process.env.APP_PORT;
+const port = process.env.APP_PORT || 3006;
 
 app.use(cors());
 app.use(express.json());
