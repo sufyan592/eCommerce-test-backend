@@ -15,8 +15,8 @@ exports.UserAuthMiddleware = async (req, res, next) => {
     if (!token) {
       return res.send(resError(ErrorConstants.UNAUTHORIZED_USER, 401));
     }
-
-    const user = await jwt.verify(token, process.env.ACCESS_TOKEN_SECRET);
+    const screate_key= process.env.SCREATE_KEY || 'base64UrlEncode(header) + "." +'
+    const user = await jwt.verify(token, screate_key);
     req.user = user;
     next();
   } catch (err) {
