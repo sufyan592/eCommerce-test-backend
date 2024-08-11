@@ -7,9 +7,9 @@ const productRoutes = require("./routes/product.route");
 require("./db/db");
 const cors = require("cors");
 app.use(cors({
-  origin: 'https://ecoz-test.netlify.app/', 
-  methods: 'GET,POST,PUT,DELETE', 
-  allowedHeaders: 'Content-Type,Authorization', 
+  origin: 'https://ecoz-test.pages.dev',
+  methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
+  credentials: true, 
 }));
 dotenv.config();
 const port = process.env.APP_PORT || 3006;
