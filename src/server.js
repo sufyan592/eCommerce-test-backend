@@ -7,8 +7,7 @@ const productRoutes = require("./routes/product.route");
 require("./db/db");
 const cors = require("cors");
 app.use(cors({
-  origin: 'https://ecoz-test.pages.dev',
-  methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
+  origin: ''*'',
   credentials: true, 
 }));
 dotenv.config();
